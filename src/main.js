@@ -6,6 +6,15 @@ import VueRouter from 'vue-router'
 //1.2 安装路由
 Vue.use(VueRouter)
 
+import moment from 'moment'
+
+// 定义全局的过滤器
+Vue.filter('dataFormat',function(dataStr,pattern = "YYYY-MM-DD HH:mm:ss"){
+  return moment(dataStr).format(pattern)
+})
+
+
+
 // 导入 APP 根组件
 import app from './App.vue'
 
@@ -17,10 +26,11 @@ import VueResource from 'vue-resource'
 Vue.use(VueResource)
 
 
-import { Header ,Swipe, SwipeItem } from 'mint-ui'
+import { Header ,Swipe, SwipeItem , Button} from 'mint-ui'
 Vue.component(Header.name, Header)
 Vue.component(Swipe.name, Swipe)
 Vue.component(SwipeItem.name, SwipeItem)
+Vue.component(Button.name, Button)
 
 Vue.http.options.root = 'http://www.liulongbin.top:3005/'
 
