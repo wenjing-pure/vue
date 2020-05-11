@@ -20,19 +20,25 @@ import app from './App.vue'
 
 import './lib/mui/css/mui.css'   
 import './lib/mui/css/icons-extra.css'
+import $ from 'jquery'
+import 'bootstrap/dist/css/bootstrap.min.css'
 
 // 安装并导入 vue-resource
 import VueResource from 'vue-resource'
 Vue.use(VueResource)
 
 
-import { Header ,Swipe, SwipeItem , Button} from 'mint-ui'
-Vue.component(Header.name, Header)
-Vue.component(Swipe.name, Swipe)
-Vue.component(SwipeItem.name, SwipeItem)
-Vue.component(Button.name, Button)
+import MintUI from 'mint-ui'
+Vue.use(MintUI)
+import 'mint-ui/lib/style.css'
+
+
+// 缩略图
+import VuePreview from'vue-preview'
+Vue.use(VuePreview)
 
 Vue.http.options.root = 'http://www.liulongbin.top:3005/'
+Vue.http.options.emulateJSON = true
 
 // 1.3 导入自己的 router.js 模块
 import router from './router.js'

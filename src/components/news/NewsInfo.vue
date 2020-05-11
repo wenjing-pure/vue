@@ -49,7 +49,6 @@ export default {
 </script>
 <style lang="scss" scoped>
   .newsInfo-container{
-    margin-bottom: 50px;
     padding:0 5px;
     .header{
       font-size:16px;

@@ -2,9 +2,9 @@
   <div class="comments-container">
     <h3 class="title">发表评论</h3>
     <hr>
-    <textarea placeholder="请输入要评论的内容,最多不超过120个字~" maxlength="120"></textarea>
+    <textarea placeholder="请输入要评论的内容,最多不超过120个字~" maxlength="120" v-model="msg"></textarea>
 
-    <mt-button type="primary" size="large">发表评论</mt-button>
+    <mt-button type="primary" size="large" @click="postComment">发表评论</mt-button>
 
 
     <div class="cmt-list">
@@ -28,7 +28,8 @@ export default {
   data(){
     return {
       pageindex:1,
-      comments:[]
+      comments:[],
+      msg:''
     }
   },
   created() {
@@ -47,6 +48,18 @@ export default {
     loadMore(){
       this.pageindex++
       this.getComments()
+    },
+    postComment(){
+      if(this.msg.trim().length == 0){
+        return Toast("评论内容不能为空")
+      }
+      this.$http.post('api/postcomment/'+ this.id,{ content:this.msg.trim()}).then(result =>{
+        if(result.body.status === 0){
+          var cmt = { user_name:'匿名用户',add_time:Date.now(),content:this.msg.trim() }
+          this.comments.unshift(cmt)
+          this.msg = ''
+        }
+      })
     }
   },
   props:["id"]

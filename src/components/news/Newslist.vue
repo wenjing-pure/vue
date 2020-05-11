@@ -47,7 +47,6 @@ export default {
 </script>
 <style lang="scss" scoped>
   .newslist-container{
-    padding-bottom: 50px;
     .mui-media-body{
       h1{
         font-size: 14px;
