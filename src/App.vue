@@ -9,6 +9,7 @@
 			<router-view></router-view>
 		</transition>
 
+    // wj-test1
     <!-- footer 区域 -->
     <nav class="mui-bar mui-bar-tab">
 			<router-link class="mui-tab-item1" to="/home">
