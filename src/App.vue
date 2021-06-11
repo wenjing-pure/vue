@@ -10,7 +10,6 @@
 			<router-view></router-view>
 		</transition>
 
-
     <!-- footer 区域 -->
     <nav class="mui-bar mui-bar-tab">
 			<router-link class="mui-tab-item1" to="/home">
