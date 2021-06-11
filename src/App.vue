@@ -11,6 +11,7 @@
 
     // wj-test1
     <!-- footer 区域 -->
+    // test2
     <nav class="mui-bar mui-bar-tab">
 			<router-link class="mui-tab-item1" to="/home">
 				<span class="mui-icon mui-icon-home"></span>
